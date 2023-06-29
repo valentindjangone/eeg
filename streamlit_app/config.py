@@ -7,15 +7,30 @@ Config file for Streamlit App
 from member import Member
 
 
-TITLE = "My Awesome App"
+TITLE = "EEG - NIRS : Motor execution classification"
 
 TEAM_MEMBERS = [
+    
     Member(
-        name="John Doe",
-        linkedin_url="https://www.linkedin.com/in/charlessuttonprofile/",
-        github_url="https://github.com/charlessutton",
+        name="Julien Brachet",
+        linkedin_url="https://fr.linkedin.com/",
+        github_url="https://github.com/"
     ),
-    Member("Jane Doe"),
+    Member(
+        name="François Crouchet",
+        linkedin_url="https://fr.linkedin.com/",
+        github_url="https://github.com/"
+    ),
+    Member(
+        name="Valentin Djangoné",
+        linkedin_url="https://fr.linkedin.com/in/valentin-djangon%C3%A9-b820981b2",
+        github_url="https://github.com/valentindjangone"
+    ),
+    Member(
+        name="Nicolas Mavromatis",
+        linkedin_url="https://fr.linkedin.com/",
+        github_url="https://github.com/"
+    ),
 ]
 
-PROMOTION = "Promotion Bootcamp Data Scientist - April 2021"
+PROMOTION = "Promotion Data Scientist - October 2022"

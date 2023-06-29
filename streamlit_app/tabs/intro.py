@@ -1,31 +1,36 @@
 import streamlit as st
 
 
-title = "My Awesome DataScientest project."
+title = 'Our Journey With EEG : Decoding Motor Execution Signals'
+
 sidebar_name = "Introduction"
 
 
 def run():
 
     # TODO: choose between one of these GIFs
-    # st.image("https://dst-studio-template.s3.eu-west-3.amazonaws.com/1.gif")
-    st.image("https://dst-studio-template.s3.eu-west-3.amazonaws.com/2.gif")
-    # st.image("https://dst-studio-template.s3.eu-west-3.amazonaws.com/3.gif")
-
+    #st.image("https://dst-studio-template.s3.eu-west-3.amazonaws.com/1.gif")
+    #st.image("https://dst-studio-template.s3.eu-west-3.amazonaws.com/2.gif")
+    #st.image("https://dst-studio-template.s3.eu-west-3.amazonaws.com/3.gif")
+    _left, mid, _right = st.columns(3)
+    with mid:
+      st.image("https://i.gifer.com/74ny.gif", use_column_width=5)
+    
     st.title(title)
 
-    st.markdown("---")
+    st.markdown("---------")
 
-    st.markdown(
-        """
-        Here is a bootsrap template for your DataScientest project, built with [Streamlit](https://streamlit.io).
+    st.subheader('Introduction')
 
-        You can browse streamlit documentation and demos to get some inspiration:
-        - Check out [streamlit.io](https://streamlit.io)
-        - Jump into streamlit [documentation](https://docs.streamlit.io)
-        - Use a neural net to [analyze the Udacity Self-driving Car Image
-          Dataset] (https://github.com/streamlit/demo-self-driving)
-        - Explore a [New York City rideshare dataset]
-          (https://github.com/streamlit/demo-uber-nyc-pickups)
-        """
-    )
+
+    st.write("""
+    Welcome to this project at the intersection of neuroscience, machine learning, and data visualization. 
+
+   
+Every time we reach, grasp or wave, there's an intricate dance of electrical activity taking place within our brains. These seemingly simple actions trigger a cascade of signals, with each neuron playing a part in the grand performance. This cerebral ballet is captured and visualized using EEG (Electroencephalogram) data.
+
+The challenge we've embraced is to find the specific patterns within the EEG data that represent the command to move our hands and arms. It's like discerning a single melody within an orchestra's symphony - not an easy feat, but an intriguing one!
+
+We put state of the art machine learning techniques to use, aiming to classify these hand and arm movement commands within the EEG data. Join us as we visualize and interpret this data.
+
+""")
