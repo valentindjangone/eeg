@@ -3,7 +3,7 @@
 
 ## Explications et Instructions
 
-Ce repository contient les fichiers nécessaires à l'initialisation d'un projet fil-rouge dans le cadre de votre formation [DataScientest](https://datascientest.com/).
+Ce repositor contient les fichiers nécessaires à l'initialisation d'un projet fil-rouge dans le cadre de votre formation [DataScientest](https://datascientest.com/).
 
 Il contient principalement le présent fichier README.md et un template d'application [Streamlit](https://streamlit.io/).
 
