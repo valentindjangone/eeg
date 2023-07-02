@@ -2,10 +2,9 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from PIL import Image
-import pyvista as pv
-import mne
 from pathlib import Path
-from mne.datasets import sample
+from streamlit_tensorboard import st_tensorboard
+import tensorflow
 
 title = "The basics of EEG"
 sidebar_name = "The basics of EEG"

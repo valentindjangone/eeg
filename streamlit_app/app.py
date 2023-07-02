@@ -1,6 +1,7 @@
 from collections import OrderedDict
 
 import streamlit as st
+from tensorflow.keras.models import load_model
 
 # TODO : change TITLE, TEAM_MEMBERS and PROMOTION values in config.py.
 import config
@@ -30,6 +31,14 @@ TABS = OrderedDict(
         (third_tab.sidebar_name, third_tab),
     ]
 )
+
+
+@st.cache(allow_output_mutation=True)
+def load_my_model():
+    model = load_model('model_cnn_hbo_93.h5')
+    return model
+
+model = load_my_model()
 
 
 def run():
