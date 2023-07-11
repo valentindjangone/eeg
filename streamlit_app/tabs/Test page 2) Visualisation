@@ -1,1 +1,17 @@
+import streamlit as st
+import pandas as pd
+import numpy as np
+from PIL import Image
+from pathlib import Path
+from streamlit_tensorboard import st_tensorboard
+import tensorflow
+
+title = "Analyse et visualisation des données"
+sidebar_name = "Analyse et visualisation"
+
+@st.cache
+def load_data():
+   bikes_data_path = Path() / 'data/bike_sharing_demand_train.csv'
+   data = pd.read_csv(bikes_data_path)
+   return data
 
