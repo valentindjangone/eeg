@@ -11,7 +11,58 @@ sidebar_name = "Analyse et visualisation"
 
 @st.cache
 def load_data():
-   bikes_data_path = Path() / 'data/bike_sharing_demand_train.csv'
+   bikes_data_path = Path() / 'data/bike_sharing_demand_train.csv' #modifier nom doc et path
    data = pd.read_csv(bikes_data_path)
    return data
 
+df = load_data()
+st.dataframe(df)
+
+# Affichage des signaux bruts
+import scipy.io as sio
+import mne
+
+mat = sio.loadmat('/content/drive/MyDrive/Projet/DataMatlib/S1.mat')
+file = mat['data'] #tout le fichier
+
+eeg=file[0,0] #partie concernant signaux EEG
+Fs = eeg[:,0][0][0][0] #Sampling frequency EEG
+neegchan = eeg[:,0][1][0][0] #Number of channels EEG
+eeglabels = [a[0][0] for a in eeg[:,0][2]] #Channel labels EEG
+tteeg = eeg[:,0][3][0] #Time points EEG
+xxeegRaw = eeg[:,0][4] #Raw signals (Time points x Nchannels) EEG
+
+event=file[2,0] #partie concernant events
+ttevent = event[:,0] #time of the events (starting from 0 and synchronzed with EEG and NIRS signals)
+codeevent = event[:,1] #code of the events
+
+for i in range(len(eeglabels)):
+    eeglabels[i]=eeglabels[i].replace("Fc","FC")
+    eeglabels[i]=eeglabels[i].replace("Cp","CP")
+
+info = mne.create_info(ch_names=eeglabels, sfreq=Fs, ch_types='eeg')#, ch_types='eeg'
+info.set_montage('standard_1020')
+raw = mne.io.RawArray(xxeegRaw.T/1000000, info) #transfo des data et passage de microVolt à Volt
+
+duration = pd.Series(1 ,range(205)) # stockage des durées dans un array
+old_vals, new_vals = [10,1,3,4,7,8], ['START', 'REST', 'RIGHT ARM','LEFT ARM','RIGHT HAND','LEFT HAND']
+def switch_val(x): return new_vals[old_vals.index(x)] if x in old_vals else x
+vc=np.vectorize(switch_val)
+annotation =  mne.Annotations(onset=ttevent, duration = duration, description = vc(codeevent)) # création des annotations à partir d'arrays issus des events des fichiers sources
+raw.set_annotations(annotation) # affectation des annotations à l'objet raw
+
+mne.viz.plot_raw(raw);
+
+# Autre visualisation : 
+events, event_id = mne.events_from_annotations(raw)
+epochs = mne.Epochs(raw,events=events,event_id=event_id,tmin=-0.2, tmax=7,preload=True)
+epochs['RIGHT HAND'].average().plot()
+epochs['RIGHT ARM'].average().plot()
+epochs['LEFT HAND'].average().plot()
+epochs['LEFT ARM'].average().plot();
+
+# Visualisation des topomap : 
+epochs['RIGHT HAND'].average().plot_topomap()
+epochs['RIGHT ARM'].average().plot_topomap()
+epochs['LEFT HAND'].average().plot_topomap()
+epochs['LEFT ARM'].average().plot_topomap();
