@@ -6,63 +6,75 @@ from pathlib import Path
 from streamlit_tensorboard import st_tensorboard
 import tensorflow
 
-title = "Analyse et visualisation des données"
-sidebar_name = "Analyse et visualisation"
+import streamlit as st
 
-@st.cache
-def load_data():
-   bikes_data_path = Path() / 'data/bike_sharing_demand_train.csv' #modifier nom doc et path
-   data = pd.read_csv(bikes_data_path)
-   return data
+# Affichage du titre
+st.title("Partie 2 : Analyse et visualisation des datas")
 
-df = load_data()
-st.dataframe(df)
+# Affichage du titre
+st.header("Les données")
 
-# Affichage des signaux bruts
-import scipy.io as sio
-import mne
+# Affichage du texte descriptif
+st.text("- Les données de chacun des participants étaient stockées dans un fichier matlab.\n"
+         "- Leur extraction et l’utilisation de la librairie MNE nous a permis de les séparer en « epoch ».\n"
+         "- Chaque epoch correspond à la fenêtre temporelle durant laquelle le participant réalisait une condition expérimentale (repos ou l’un des 4 mouvements ou l’indication du début d’une séquence expérimentale).")
 
-mat = sio.loadmat('/content/drive/MyDrive/Projet/DataMatlib/S1.mat')
-file = mat['data'] #tout le fichier
+# Affichage du titre
+st.header("Premières visualisations")
 
-eeg=file[0,0] #partie concernant signaux EEG
-Fs = eeg[:,0][0][0][0] #Sampling frequency EEG
-neegchan = eeg[:,0][1][0][0] #Number of channels EEG
-eeglabels = [a[0][0] for a in eeg[:,0][2]] #Channel labels EEG
-tteeg = eeg[:,0][3][0] #Time points EEG
-xxeegRaw = eeg[:,0][4] #Raw signals (Time points x Nchannels) EEG
+st.text("A l’aide de la librairie MNE et de la commande plot_raw, il est possible d’observer l’amplitude du signal pour l’ensemble des électrodes d’enregistrement : ")
 
-event=file[2,0] #partie concernant events
-ttevent = event[:,0] #time of the events (starting from 0 and synchronzed with EEG and NIRS signals)
-codeevent = event[:,1] #code of the events
+# Affichage de l'image
+image = "chemin_vers_l_image.png"
+st.image(image)
 
-for i in range(len(eeglabels)):
-    eeglabels[i]=eeglabels[i].replace("Fc","FC")
-    eeglabels[i]=eeglabels[i].replace("Cp","CP")
 
-info = mne.create_info(ch_names=eeglabels, sfreq=Fs, ch_types='eeg')#, ch_types='eeg'
-info.set_montage('standard_1020')
-raw = mne.io.RawArray(xxeegRaw.T/1000000, info) #transfo des data et passage de microVolt à Volt
+# Affichage du titre diapo 3 et 4
+st.header("Premières visualisations (EEG)")
 
-duration = pd.Series(1 ,range(205)) # stockage des durées dans un array
-old_vals, new_vals = [10,1,3,4,7,8], ['START', 'REST', 'RIGHT ARM','LEFT ARM','RIGHT HAND','LEFT HAND']
-def switch_val(x): return new_vals[old_vals.index(x)] if x in old_vals else x
-vc=np.vectorize(switch_val)
-annotation =  mne.Annotations(onset=ttevent, duration = duration, description = vc(codeevent)) # création des annotations à partir d'arrays issus des events des fichiers sources
-raw.set_annotations(annotation) # affectation des annotations à l'objet raw
+st.text("Il est également possible d’observer le signal de chaque électrode ou capteur, moyenné pour une condition particulière : ")
 
-mne.viz.plot_raw(raw);
 
-# Autre visualisation : 
-events, event_id = mne.events_from_annotations(raw)
-epochs = mne.Epochs(raw,events=events,event_id=event_id,tmin=-0.2, tmax=7,preload=True)
-epochs['RIGHT HAND'].average().plot()
-epochs['RIGHT ARM'].average().plot()
-epochs['LEFT HAND'].average().plot()
-epochs['LEFT ARM'].average().plot();
+# Options du menu déroulant
+options = ['EEG', 'NIRS']
+selected_option = st.selectbox('Sélectionnez le type de signaux à afficher', options)
 
-# Visualisation des topomap : 
-epochs['RIGHT HAND'].average().plot_topomap()
-epochs['RIGHT ARM'].average().plot_topomap()
-epochs['LEFT HAND'].average().plot_topomap()
-epochs['LEFT ARM'].average().plot_topomap();
+if selected_option == 'EEG':
+    # Affichage des 4 images EEG
+    image1 = "chemin_vers_image1_eeg.png"
+    image2 = "chemin_vers_image2_eeg.png"
+    image3 = "chemin_vers_image3_eeg.png"
+    image4 = "chemin_vers_image4_eeg.png"
+    st.image([image1, image2], caption=['Image EEG 1', 'Image EEG 2'])
+    st.image([image3, image4], caption=['Image EEG 3', 'Image EEG 4'])
+else:
+    # Affichage des 4 images NIRS
+    image1 = "chemin_vers_image1_nirs.png"
+    image2 = "chemin_vers_image2_nirs.png"
+    image3 = "chemin_vers_image3_nirs.png"
+    image4 = "chemin_vers_image4_nirs.png"
+    st.image([image1, image2], caption=['Image NIRS 1', 'Image NIRS 2'])
+    st.image([image3, image4], caption=['Image NIRS 3', 'Image NIRS 4'])
+
+
+
+
+
+# Affichage du titre diapo 5
+st.header("Premières visualisations")
+
+st.text("Enfin, il est possible d’accéder à la dynamique des changements d’activité neuronal à l’aide de la fonction plot_topomap de MNE : ")
+gif = "chemin_vers_le_gif.png"
+st.image(gif)
+
+
+
+# Affichage du titre diapo 6
+st.header("Analyse fréquentielle du signal EEG")
+st.text("Il est également possible d’observer la densité  spectral de puissance (ou PSD en anglais. Elle nous renseigne sur la répartition fréquentielle de la puissance d’un signal :")
+
+
+image_psd = "chemin_vers_image_psd.png"
+st.image(image_psd)
+
+st.text("Rappel, rythmes physiologiques : delta (<4Hz), thêta (4-8Hz), alpha (8-12Hz, bêta (12 à 30 Hz) et gamma (>30Hz)")
