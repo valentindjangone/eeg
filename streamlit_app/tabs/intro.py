@@ -24,7 +24,7 @@ def run():
 
 
     st.write("""
-    Welcome to this project at the intersection of neuroscience, machine learning, and data visualization. 
+    Welcome to this project at the intersection of neurosciences, machine learning, and data visualization. 
 
    
 Every time we reach, grasp or wave, there's an intricate dance of electrical activity taking place within our brains. These seemingly simple actions trigger a cascade of signals, with each neuron playing a part in the grand performance. This cerebral ballet is captured and visualized using EEG (Electroencephalogram) data.
