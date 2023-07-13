@@ -64,8 +64,8 @@ else:
 st.header("Premières visualisations")
 
 st.text("Enfin, il est possible d’accéder à la dynamique des changements d’activité neuronal à l’aide de la fonction plot_topomap de MNE : ")
-gif = "chemin_vers_le_gif.png"
-st.image(gif)
+gif = "Gif_evoked_RightHand.mp4"
+st.video(gif)
 
 
 
