@@ -25,7 +25,7 @@ st.header("Premières visualisations")
 st.text("A l’aide de la librairie MNE et de la commande plot_raw, il est possible d’observer l’amplitude du signal pour l’ensemble des électrodes d’enregistrement : ")
 
 # Affichage de l'image
-image = "chemin_vers_l_image.png"
+image = "eeg_raw.png"
 st.image(image)
 
 
@@ -41,20 +41,20 @@ selected_option = st.selectbox('Sélectionnez le type de signaux à afficher', o
 
 if selected_option == 'EEG':
     # Affichage des 4 images EEG
-    image1 = "chemin_vers_image1_eeg.png"
-    image2 = "chemin_vers_image2_eeg.png"
-    image3 = "chemin_vers_image3_eeg.png"
-    image4 = "chemin_vers_image4_eeg.png"
-    st.image([image1, image2], caption=['Image EEG 1', 'Image EEG 2'])
-    st.image([image3, image4], caption=['Image EEG 3', 'Image EEG 4'])
+    image1 = "EEG1.png"
+    image2 = "EEG2.png"
+    image3 = "EEG3.png"
+    image4 = "EEG4.png"
+    st.image([image1, image2], caption=['Main Gauche', 'Main Droite'])
+    st.image([image3, image4], caption=['Bras Gauche', 'Bras Droit'])
 else:
     # Affichage des 4 images NIRS
-    image1 = "chemin_vers_image1_nirs.png"
-    image2 = "chemin_vers_image2_nirs.png"
-    image3 = "chemin_vers_image3_nirs.png"
-    image4 = "chemin_vers_image4_nirs.png"
-    st.image([image1, image2], caption=['Image NIRS 1', 'Image NIRS 2'])
-    st.image([image3, image4], caption=['Image NIRS 3', 'Image NIRS 4'])
+    image1 = "NIRS1.png"
+    image2 = "NIRS2.png"
+    image3 = "NIRS3.png"
+    image4 = "NIRS4.png"
+    st.image([image1, image2], caption=['Main Gauche', 'Main Droite'])
+    st.image([image3, image4], caption=['Bras Gauche', 'Bras Droit'])
 
 
 
@@ -74,7 +74,7 @@ st.header("Analyse fréquentielle du signal EEG")
 st.text("Il est également possible d’observer la densité  spectral de puissance (ou PSD en anglais. Elle nous renseigne sur la répartition fréquentielle de la puissance d’un signal :")
 
 
-image_psd = "chemin_vers_image_psd.png"
+image_psd =  "PSD.png"
 st.image(image_psd)
 
 st.text("Rappel, rythmes physiologiques : delta (<4Hz), thêta (4-8Hz), alpha (8-12Hz, bêta (12 à 30 Hz) et gamma (>30Hz)")
