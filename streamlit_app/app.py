@@ -1,7 +1,6 @@
 from collections import OrderedDict
 
 import streamlit as st
-from tensorflow.keras.models import load_model
 
 # TODO : change TITLE, TEAM_MEMBERS and PROMOTION values in config.py.
 import config
