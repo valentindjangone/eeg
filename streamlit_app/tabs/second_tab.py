@@ -2,37 +2,82 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from PIL import Image
-from pathlib import Path
-from streamlit_tensorboard import st_tensorboard
-import tensorflow
 
-title = "The basics of EEG"
-sidebar_name = "The basics of EEG"
+
+import streamlit as st
+
+title = "Second tab"
+sidebar_name = "Analyse et visualisation des datas"
 
 def run():
+    # Affichage du titre
+    st.title("Partie 2 : Analyse et visualisation des datas")
 
-    st.title(title)
-    st.write("""
-    ## What is Electroencephalography (EEG)?""")
-    col1, col2 = st.columns(2)  # Crée deux colonnes
+    # Affichage du titre
+    st.header("Les données")
 
-    with col1:  # Dans la colonne de droite
-        st.write("""
+    # Affichage du texte descriptif
+    st.text("- Les données de chacun des participants étaient stockées dans un fichier matlab.\n"
+            "- Leur extraction et l’utilisation de la librairie MNE nous a permis de les séparer  \n en « epoch ».\n"
+            """- Chaque epoch correspond à la fenêtre temporelle durant laquelle le participant  \n réalisait une condition expérimentale (repos ou l’un des 4 mouvements ou \n l’indication du début d’une séquence expérimentale).""")
+    imageorga = "OrgaData.png"
+    st.image(imageorga)
+    # Affichage du titre
+    st.header("Premières visualisations")
 
-        Electroencephalography, or EEG, is a non-invasive method to record electrical activity of the brain. Developed in the early 20th century, it has become a fundamental tool in the fields of neurology, psychology, and cognitive sciences.
+    st.text("A l’aide de la librairie MNE et de la commande plot_raw, il est possible d’observer \nl’amplitude du signal pour l’ensemble des électrodes d’enregistrement : ")
 
-        Whenever we think, dream, feel, or move, our neurons, communicate through electrical impulses. These impulses create patterns of electrical activity that we can capture through electrodes placed on the scalp.
-        """)
-    with col2:  # Dans la colonne de gauche
-        st.image('https://zupimages.net/up/23/26/bl8v.png')
+    # Affichage de l'image
+    image = "eeg_raw.png"
+    st.image(image)
 
-    st.write("""
-    An EEG records these patterns, usually as wavy lines. These oscillations, referred to as 'brain waves', are a window into our brain's functioning, offering insights into different states of consciousness like sleep, alertness, and relaxation.
-    """)
 
-    st.image('https://www.diygenius.com/wp-content/uploads/2022/12/brainwave-frequencies-chart.jpg', caption = 'Brain waves frequencies and their associated mental state')
-    st.write("""
+    # Affichage du titre diapo 3 et 4
+    st.header("Premières visualisations (EEG)")
 
-    Our project, harnesses the power of EEG to study motor execution - specifically the intention to move our body. We utilize machine learning techniques to sift through the complex patterns in the EEG data, and classify those signals that correspond to our arms and hands movement intentions.
-    """)
+    st.text("Il est également possible d’observer le signal de chaque électrode ou capteur,\nmoyenné pour une condition particulière : ")
 
+
+    # Options du menu déroulant
+    options = ['EEG', 'NIRS']
+    selected_option = st.selectbox('Sélectionnez le type de signaux à afficher', options)
+
+    if selected_option == 'EEG':
+        # Affichage des 4 images EEG
+        image1 = "EEG1.png"
+        image2 = "EEG2.png"
+        image3 = "EEG3.png"
+        image4 = "EEG4.png"
+        st.image([image1, image2], caption=['Main Gauche', 'Main Droite'])
+        st.image([image3, image4], caption=['Bras Gauche', 'Bras Droit'])
+    else:
+        # Affichage des 4 images NIRS
+        image1 = "NIRS1.png"
+        image2 = "NIRS2.png"
+        image3 = "NIRS3.png"
+        image4 = "NIRS4.png"
+        st.image([image1, image2], caption=['Main Gauche', 'Main Droite'])
+        st.image([image3, image4], caption=['Bras Gauche', 'Bras Droit'])
+
+
+
+
+
+    # Affichage du titre diapo 5
+    st.header("Premières visualisations")
+
+    st.text("Enfin, il est possible d’accéder à la dynamique des changements d’activité neuronal \nà l’aide de la fonction plot_topomap de MNE : ")
+    gif = "Gif_evoked_RightHand.mp4"
+    st.video(gif)
+
+
+
+    # Affichage du titre diapo 6
+    st.header("Analyse fréquentielle du signal EEG")
+    st.text("Il est également possible d’observer la densité  spectral de puissance (ou PSD en \nanglais. Elle nous renseigne sur la répartition fréquentielle de la puissance \nd’un signal :")
+
+
+    image_psd =  "PSD.png"
+    st.image(image_psd)
+
+    st.text("Rappel, rythmes physiologiques : delta (<4Hz), thêta (4-8Hz), alpha (8-12Hz,\nbêta (12 à 30 Hz) et gamma (>30Hz)")
