@@ -6,7 +6,7 @@ import streamlit as st
 import config
 
 # TODO : you can (and should) rename and add tabs in the ./tabs folder, and import them here.
-from tabs import intro, second_tab, third_tab
+from tabs import intro, second_tab, third_tab, fourth_tab
 
 
 st.set_page_config(
