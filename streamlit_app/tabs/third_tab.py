@@ -125,7 +125,7 @@ def run():
     with col2:
         st.image(hbr_righthand_FC1_1)
     st.write("""2) Signaux **après transformation en concentration HbO et HbR**.
-    Les coefficients d'absorptivité molaire (correspondant à la mesure de la force avec laquelle une espèce chimique absorbe, et donc atténue, la lumière à une longueur d'onde donnée) utilisé pour appliquer la loi de Beer-Lambert pour nos longueurs d’onde sont les suivants : 
+    Les coefficients d'absorptivité molaire (correspondant à la mesure de la force avec laquelle une espèce chimique absorbe, et donc atténue, la lumière à une longueur d'onde donnée) utilisés pour appliquer la loi de Beer-Lambert pour nos longueurs d’onde sont les suivants : 
     760 :  3.56 pour HbR et 1,34 pour HbO
     850 :  1,59 pour HbR et 2,44 pour HbO
     """)
