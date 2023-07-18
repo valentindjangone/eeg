@@ -6,7 +6,7 @@ import streamlit as st
 import config
 
 # TODO : you can (and should) rename and add tabs in the ./tabs folder, and import them here.
-from tabs import intro, second_tab, third_tab, fourth_tab
+from tabs import home, intro, second_tab, third_tab, fourth_tab
 
 
 st.set_page_config(
@@ -25,6 +25,7 @@ st.markdown(f"<style>{style}</style>", unsafe_allow_html=True)
 # as value as follow :
 TABS = OrderedDict(
     [
+        (home.sidebar_name, home),
         (intro.sidebar_name, intro),
         (second_tab.sidebar_name, second_tab),
         (third_tab.sidebar_name, third_tab),
@@ -32,13 +33,13 @@ TABS = OrderedDict(
 )
 
 
-@st.cache(allow_output_mutation=True)
+"""@st.cache(allow_output_mutation=True)
 def load_my_model():
     model = load_model('model_cnn_hbo_93.h5')
     return model
 
 model = load_my_model()
-
+"""
 
 def run():
     st.sidebar.image(
