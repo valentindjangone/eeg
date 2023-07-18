@@ -2,7 +2,7 @@ import streamlit as st
 from PIL import Image
 
 # Ouvrir l'image PNG
-image = Image.open("C:\\Users\\brach\\Documents\\datascientest\\Projet EEG\\eeg-main\\eeg-main\\images\\ImageEEG.png")
+image = Image.open("ImageEEG.png")
 
 # Définir la nouvelle largeur souhaitée
 new_width = 700
@@ -15,7 +15,7 @@ new_height = int((height / width) * new_width)
 resized_image = image.resize((new_width, new_height))
 
 # Enregistrer l'image redimensionnée
-resized_image.save("C:\\Users\\brach\\Documents\\datascientest\\Projet EEG\\eeg-main\\eeg-main\\images\\image_resized.png")
+resized_image.save("image_resized.png")
 
 def balises_html(texte):
     texte_formate = f"<ul>{texte}</ul>"
@@ -42,7 +42,7 @@ def run():
     _left, mid, _right = st.columns(3)
   
     st.header("Interface Cerveau Machine / Intelligence  Artificielle : la combinaison gagnante")
-    img = Image.open("C:\\Users\\brach\\Documents\\datascientest\\Projet EEG\\eeg-main\\eeg-main\\images\\image_resized.png")
+    img = Image.open("image_resized.png")
     st.image(img, width = 400, caption = "")
     tab1, tab2 = st.tabs(["Introduction", "Objectifs"])
 
