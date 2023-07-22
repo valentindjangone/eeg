@@ -19,13 +19,15 @@ header1 = "Filtres numériques"
 subheader11 = "Filtre passe-bande (passe-bas + passe-haut)"
 text11= """Pour les données EEG, un filtre passe-haut de 0.01 HZ et un filtre
 passe-bas de 24.49 Hz ont été appliqués. Ce sont des filtres utilisés de
-manière conventionnelle dans l’analyse de signal EEG et qui permet de
+manière conventionnelle dans l’analyse de signal EEG et qui permettent de
 conserver les signaux physiologiques tout en retirant des bruits parasites
 comme le 60Hz (courant du casque) par exemple."""
 
 rawo = mne.io.read_raw_fif("../data/S1_eeg.fif",preload=True)
-rawo30 = rawo.copy()
-rawo30.crop(tmax=30).load_data()
+rawo10 = rawo.copy()
+rawo10.crop(tmax=10).load_data()
+rawo50 = rawo.copy()
+rawo50.crop(tmax=50).load_data()
 
 def _update_slider(value):
     st.session_state["filter_slider"] = value
@@ -34,11 +36,11 @@ if "filter_slider" not in st.session_state:
     st.session_state["filter_slider"] = 0
 ph, pb =0.01, 24.49
 min, max = 0.0, 100.0
-step = 1.0
+step = 0.01
 
 def display_fig():
     pht,pbt=st.session_state["filter_slider"]
-    raw=rawo30.copy()
+    raw=rawo10.copy()
     if st.session_state["check_butter"]:
         raw.filter(pht,pbt,method='iir', iir_params = None)
     else:
