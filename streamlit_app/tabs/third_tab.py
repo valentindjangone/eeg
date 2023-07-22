@@ -42,17 +42,21 @@ rawo = mne.io.read_raw_fif("../data/S1_eeg.fif",preload=True)
 rawo10 = rawo.copy()
 rawo10.crop(tmax=10).load_data()
 
-def _update_slider(value):
-    st.session_state["filter_slider"] = value
-    display_fig()
-if "filter_slider" not in st.session_state:
-    st.session_state["filter_slider"] = 0
 ph, pb =0.01, 24.49
 min, max = 0.0, 80.0
 step = 0.01
 
+def _update_slider(value):
+    st.session_state["filter_slider"] = value
+    display_fig()
+if "filter_slider" not in st.session_state:
+    st.session_state["filter_slider"] = 0, 0
+
 def display_fig():
-    pht,pbt=st.session_state["filter_slider"]
+    if st.session_state["filter_slider"] == 0:
+        pht,pbt=ph,pb
+    else:
+        pht,pbt=st.session_state["filter_slider"]
     canal=st.session_state["select_canal"]
     raw=rawo10.copy()
     if st.session_state["check_butter"]:
