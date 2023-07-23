@@ -11,7 +11,7 @@ sidebar_name = "Analyse et visualisation des données"
 
 def run():
     # Affichage du titre
-    st.title("Partie 2 : Analyse et visualisation des datas")
+    st.title("Analyse et visualisation des datas")
 
     # Affichage du titre
     st.header("Les données")
@@ -66,7 +66,7 @@ def run():
     # Affichage du titre diapo 5
     st.header("Premières visualisations")
 
-    st.write("Enfin, il est possible d’accéder à la dynamique des changements d’activité neuronal \nà l’aide de la fonction plot_topomap de MNE : ")
+    st.write("Enfin, il est possible d’accéder à la dynamique des changements d’activité neuronale \nà l’aide de la fonction plot_topomap de MNE : ")
     gif = "Gif_evoked_RightHand.mp4"
     st.video(gif)
 
@@ -74,7 +74,7 @@ def run():
 
     # Affichage du titre diapo 6
     st.header("Analyse fréquentielle du signal EEG")
-    st.write("Il est également possible d’observer la densité  spectral de puissance (ou PSD en \nanglais. Elle nous renseigne sur la répartition fréquentielle de la puissance \nd’un signal :")
+    st.write("Il est également possible d’observer la densité  spectrale de puissance (ou PSD en \nanglais). Elle nous renseigne sur la répartition fréquentielle de la puissance \nd’un signal :")
 
 
     image_psd =  "PSD.png"

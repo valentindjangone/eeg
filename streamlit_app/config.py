@@ -18,7 +18,7 @@ TEAM_MEMBERS = [
     ),
     Member(
         name="François Crouchet",
-        linkedin_url="https://fr.linkedin.com/",
+        linkedin_url="https://www.linkedin.com/in/fcrouchet/",
         github_url="https://github.com/"
     ),
     Member(

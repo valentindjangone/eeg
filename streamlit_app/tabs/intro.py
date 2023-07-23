@@ -24,7 +24,7 @@ def balises_html(texte):
 # Utilisation de la fonction balises_html pour créer une liste à puces
 liste = """
 <li>Visualisation des données.</li>
-<li>Preprocessing des données : pour élimiminer ou réduire les artefacts notamment les artfects de mouvements. </li>
+<li>Preprocessing des données : pour élimiminer ou réduire les artefacts notamment les artefacts de mouvements. </li>
 <li>Feature Engineering pour extraire des caractétristiques notamment temporelles, fréquentielles ou dans le domaine temps/fréquence.</li>
 <li>Elaboration des modèles de machine et de deep learning pour établir les prédictions.</li>
 """
@@ -54,9 +54,9 @@ def run():
                   l'électronique.
                   \n\nDepuis les années 50, les techniques  d'Electroencéphalographiques (EEG) sont utilisées pour mesurer l'activité cérébrale.""")
                   
-      st.markdown("""Elles ont été complétées par d'autres techniques d'imagerie comme la Spectroscopie proche infra-rouge fonctionnelle (FNIRS), la magnétoencéphalographie (MEG) et l'imagerie pa résonnance magnétique.""")
+      st.markdown("""Elles ont été complétées par d'autres techniques d'imagerie comme la Spectroscopie proche infra-rouge fonctionnelle (FNIRS), la magnétoencéphalographie (MEG) et l'imagerie par résonnance magnétique.""")
                    
-      st.markdown("""En mesurant cette activité, il est devenu possible de traduire  signaux électroniques ou neurologiques produits par le cerveau  en commandes compréhensibles par une machine.
+      st.markdown("""En mesurant cette activité, il est devenu possible de traduire les signaux électroniques ou neurologiques produits par le cerveau  en commandes compréhensibles par une machine.
                   \n\nCela nous a permis de construire de nouvelles interfaces homme-machine (IHM) : les interfaces cerveau-ordinateur (BCI).""")
 
       
@@ -65,8 +65,8 @@ def run():
       st.header("Description du projet")
       
       st.markdown(""" L'objectif de notre projet est de réaliser un modèle de classification permettant de prédire les mouvements réalisés par un utilisateur.
-                  \n\nPour cela nous avons utilisé des jeux de données opensource où ont été mesurées les données EEG de 15 individus réalisant 4 mouvements différents ((Levage bras droit, levage bras gauche, préhension main droite, préhension main gauche).
-                  \n\nDans le cadre de ce projet la méthodologie suivante : """)
+                  \n\nPour cela nous avons utilisé des jeux de données opensource où ont été mesurées les données EEG et fNIRS de 15 individus réalisant 4 mouvements différents ((Levage bras droit, levage bras gauche, préhension main droite, préhension main gauche).
+                  \n\nDans le cadre de ce projet, la méthodologie est la suivante : """)
       balises_html(liste)
       
 
