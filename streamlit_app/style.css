@@ -2,11 +2,11 @@ h1,
 h2,
 h3,
 h4 {
-  color: #3fd0d3;
+  color: #102fc9;
 }
 
 code {
-  color: #3cc0b9;
+  color: #1d379e;
 }
 
 #MainMenu {
@@ -40,12 +40,12 @@ section[data-testid="stSidebar"] button[title="View fullscreen"] {
   display: none;
 }
 
-section[data-testid="stSidebar"] button[kind="icon"] {
-  display: none;
+section[data-testid="stSidebar"] button[kind="icon"] {"🏠 "
+  display: display;
 }
 
 section[data-testid="stSidebar"] .st-bk {
-  background-color: white;
+  background-color: #10b8dd;
 }
 
 section[data-testid="stSidebar"] .st-c0 {
@@ -80,6 +80,6 @@ hr {
 /* First Page */
 
 section[tabindex="0"] .block-container {
-  padding-top: 0px;
-  padding-bottom: 0px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }

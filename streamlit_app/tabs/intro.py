@@ -43,32 +43,30 @@ def run():
   
     st.header("Interface Cerveau Machine / Intelligence  Artificielle : la combinaison gagnante")
     img = Image.open("image_resized.png")
-    st.image(img, width = 400, caption = "")
+    left_column, center_column, right_column = st.columns(3)
+
+    center_column.image(img, width = 400, caption = "")
     tab1, tab2 = st.tabs(["Introduction", "Objectifs"])
 
     with tab1:
       st.header ("Introduction")
-      st.write(""" Bienvenue sur la page de notre projet qui est à l'intersection de la neuroscience, de l'intelligence artificielle et de 
-                  l'électronique.""")
+      st.markdown(""" Bienvenue sur la page de notre projet qui est à l'intersection de la neuroscience, de l'intelligence artificielle et de 
+                  l'électronique.
+                  \n\nDepuis les années 50, les techniques  d'Electroencéphalographiques (EEG) sont utilisées pour mesurer l'activité cérébrale.""")
                   
-      st.write("""Depuis les années 50, les techniques  d'Electroencéphalographiques (EEG) sont utilisées pour mesurer l'activité cérébrale.""")
-                  
-      st. write("""Elles ont été complétées par d'autres techniques d'imagerie comme la Spectroscopie proche infra-rouge fonctionnelle (FNIRS), la magnétoencéphalographie (MEG) et l'imagerie pa résonnance magnétique.""")
+      st.markdown("""Elles ont été complétées par d'autres techniques d'imagerie comme la Spectroscopie proche infra-rouge fonctionnelle (FNIRS), la magnétoencéphalographie (MEG) et l'imagerie pa résonnance magnétique.""")
                    
-      st.write("""En mesurant cette activité, il est devenu possible de traduire  signaux électroniques ou neurologiques produits par le cerveau  en commandes compréhensibles par une machine.""")
-                  
-      st.write("""Et ainsi de construire de nouvelles IHM : les Brain Computer Interfaces (BCI).""")
+      st.markdown("""En mesurant cette activité, il est devenu possible de traduire  signaux électroniques ou neurologiques produits par le cerveau  en commandes compréhensibles par une machine.
+                  \n\nCela nous a permis de construire de nouvelles interfaces homme-machine (IHM) : les interfaces cerveau-ordinateur (BCI).""")
 
       
       
     with tab2:
       st.header("Description du projet")
       
-      st.write(""" L'objectif de notre projet est de réaliser un modèle de classification permettant de prédire les mouvements réalisés par un utilisateur.""")
-                  
-      st.write("""Pour cela nous avons utilisé des jeux de données opensource où ont été mesurées les données EEG de 15 individus réalisant 4 mouvements différents ((Levage bras droit, levage bras gauche, préhension main droite, préhension main gauche).""")
-      
-      st.write(""" Dans le cadre de ce projet la méthodologie suivante : """)
+      st.markdown(""" L'objectif de notre projet est de réaliser un modèle de classification permettant de prédire les mouvements réalisés par un utilisateur.
+                  \n\nPour cela nous avons utilisé des jeux de données opensource où ont été mesurées les données EEG de 15 individus réalisant 4 mouvements différents ((Levage bras droit, levage bras gauche, préhension main droite, préhension main gauche).
+                  \n\nDans le cadre de ce projet la méthodologie suivante : """)
       balises_html(liste)
       
 

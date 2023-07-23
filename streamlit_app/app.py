@@ -23,23 +23,17 @@ st.markdown(f"<style>{style}</style>", unsafe_allow_html=True)
 # TODO: add new and/or renamed tab in this ordered dict by
 # passing the name in the sidebar as key and the imported tab
 # as value as follow :
-TABS = OrderedDict(
-    [
-        (home.sidebar_name, home),
-        (intro.sidebar_name, intro),
-        (second_tab.sidebar_name, second_tab),
-        (third_tab.sidebar_name, third_tab),
+
+TABS = OrderedDict([
+        ("🏠 " + home.sidebar_name, home),
+        ("📖 " + intro.sidebar_name, intro),
+        ("🔍 " + second_tab.sidebar_name, second_tab),
+        ("🔧 " +third_tab.sidebar_name, third_tab),
+        ("⚙️ " + fourth_tab.sidebar_name, fourth_tab)
     ]
 )
 
 
-"""@st.cache(allow_output_mutation=True)
-def load_my_model():
-    model = load_model('model_cnn_hbo_93.h5')
-    return model
-
-model = load_my_model()
-"""
 
 def run():
     st.sidebar.image(

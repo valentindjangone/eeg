@@ -7,7 +7,7 @@ from PIL import Image
 import streamlit as st
 
 title = "Second tab"
-sidebar_name = "Analyse et visualisation des datas"
+sidebar_name = "Analyse et visualisation des données"
 
 def run():
     # Affichage du titre
@@ -17,7 +17,7 @@ def run():
     st.header("Les données")
 
     # Affichage du texte descriptif
-    st.text("- Les données de chacun des participants étaient stockées dans un fichier matlab.\n"
+    st.write("- Les données de chacun des participants étaient stockées dans un fichier matlab.\n"
             "- Leur extraction et l’utilisation de la librairie MNE nous a permis de les séparer  \n en « epoch ».\n"
             """- Chaque epoch correspond à la fenêtre temporelle durant laquelle le participant  \n réalisait une condition expérimentale (repos ou l’un des 4 mouvements ou \n l’indication du début d’une séquence expérimentale).""")
     imageorga = "OrgaData.png"
@@ -25,7 +25,7 @@ def run():
     # Affichage du titre
     st.header("Premières visualisations")
 
-    st.text("A l’aide de la librairie MNE et de la commande plot_raw, il est possible d’observer \nl’amplitude du signal pour l’ensemble des électrodes d’enregistrement : ")
+    st.write("A l’aide de la librairie MNE et de la commande plot_raw, il est possible d’observer \nl’amplitude du signal pour l’ensemble des électrodes d’enregistrement : ")
 
     # Affichage de l'image
     image = "eeg_raw.png"
@@ -35,7 +35,7 @@ def run():
     # Affichage du titre diapo 3 et 4
     st.header("Premières visualisations (EEG)")
 
-    st.text("Il est également possible d’observer le signal de chaque électrode ou capteur,\nmoyenné pour une condition particulière : ")
+    st.write("Il est également possible d’observer le signal de chaque électrode ou capteur,\nmoyenné pour une condition particulière : ")
 
 
     # Options du menu déroulant
@@ -66,7 +66,7 @@ def run():
     # Affichage du titre diapo 5
     st.header("Premières visualisations")
 
-    st.text("Enfin, il est possible d’accéder à la dynamique des changements d’activité neuronal \nà l’aide de la fonction plot_topomap de MNE : ")
+    st.write("Enfin, il est possible d’accéder à la dynamique des changements d’activité neuronal \nà l’aide de la fonction plot_topomap de MNE : ")
     gif = "Gif_evoked_RightHand.mp4"
     st.video(gif)
 
@@ -74,10 +74,10 @@ def run():
 
     # Affichage du titre diapo 6
     st.header("Analyse fréquentielle du signal EEG")
-    st.text("Il est également possible d’observer la densité  spectral de puissance (ou PSD en \nanglais. Elle nous renseigne sur la répartition fréquentielle de la puissance \nd’un signal :")
+    st.write("Il est également possible d’observer la densité  spectral de puissance (ou PSD en \nanglais. Elle nous renseigne sur la répartition fréquentielle de la puissance \nd’un signal :")
 
 
     image_psd =  "PSD.png"
     st.image(image_psd)
 
-    st.text("Rappel, rythmes physiologiques : delta (<4Hz), thêta (4-8Hz), alpha (8-12Hz,\nbêta (12 à 30 Hz) et gamma (>30Hz)")
+    st.write("Rappel, rythmes physiologiques : delta (<4Hz), thêta (4-8Hz), alpha (8-12Hz,\nbêta (12 à 30 Hz) et gamma (>30Hz)")
