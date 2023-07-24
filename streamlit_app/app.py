@@ -6,7 +6,7 @@ import streamlit as st
 import config
 
 # TODO : you can (and should) rename and add tabs in the ./tabs folder, and import them here.
-from tabs import home, intro, second_tab, third_tab, fourth_tab
+from tabs import home, intro, second_tab, third_tab, fourth_tab, fifth_tab
 
 
 st.set_page_config(
@@ -29,7 +29,8 @@ TABS = OrderedDict([
         ("📖 " + intro.sidebar_name, intro),
         ("🔍 " + second_tab.sidebar_name, second_tab),
         ("🔧 " +third_tab.sidebar_name, third_tab),
-        ("⚙️ " + fourth_tab.sidebar_name, fourth_tab)
+        ("⚙️ " + fourth_tab.sidebar_name, fourth_tab),
+        ("📊 " + fifth_tab.sidebar_name, fifth_tab)
     ]
 )
 
