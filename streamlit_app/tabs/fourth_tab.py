@@ -34,6 +34,9 @@ def run():
         comme c'est le cas avec les caractéristiques extraites par Mini ROCKET.
         """
     )
+    col1, col2, col3 = st.columns(3)
+    with col2:
+        st.image('../images/Cortex_sensorimoteur1.jpg')
     st.subheader(sub_header_3)
     st.markdown(
         """
@@ -50,7 +53,7 @@ def run():
     )
 
     st.video("VotingClassifierAnimation.mp4")
-    st.markdown("_Vidéo : Animation du système de classification de vote_")  # La légende de la vidéo
+    st.markdown("_Vidéo : Animation du système de classification de vote_") 
 
     st.subheader(sub_header_4)
     st.markdown(
