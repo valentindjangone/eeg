@@ -126,7 +126,7 @@ def run():
     with col2:
         st.button("Defaut : 0,01 à 24,49", on_click=_update_slider, kwargs={"value": (ph,pb)})
         st.checkbox("Butterworth Ordre 4", on_change=display_fig, key="check_butter")
-    st.selectbox("Choix du canal :", options=("FC1", "FC2","FC5","FC6","Fz"), index=0, on_change=display_fig, key="select_canal")
+    st.selectbox("Choix du canal :", options=("C1","C2","C3","C4","CP1","CP2","CP5","CP6","FC1", "FC2","FC5","FC6","Fz"), index=0, on_change=display_fig, key="select_canal")
     st.pyplot(display_fig())
 
     st.header(header_ICA)
