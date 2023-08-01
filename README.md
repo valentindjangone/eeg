@@ -3,7 +3,7 @@
 
 ## Introduction
 
-Ce repository a pour objectif de présenter le projet initié dans le cadre de notre formation de[Data Scientist](https://datascientest.com/en/data-scientist-course) à [DataScientest](https://datascientest.com/)
+Ce repository a pour objectif de présenter le projet initié dans le cadre de notre formation de [Data Scientist](https://datascientest.com/en/data-scientist-course) à [DataScientest](https://datascientest.com/)
 
 Notre projet vise à **classifier** les ondes cérébrales associées à l'**exécution motrice**. L'objectif principal de cette classification est de créer une **Interface Homme - Machine (IHM)** permettant aux utilisateurs d'interagir avec des dispositifs ou des systèmes informatiques en utilisant leurs activités cérébrales en temps réel. En détectant et en interprétant les **intentions de mouvement** à partir des signaux électroencéphalographiques **(EEG)** et Functional Near Infrared Spectroscopy **(FNIRS)**, nous souhaitons contribuer au développement d'une interface intuitive et efficace pour faciliter la communication et le contrôle avec les machines, ouvrant ainsi la voie à de nouvelles perspectives dans la technologie et l' **accessibilité**.
 
