@@ -32,9 +32,9 @@ Nous traitons le signal avec la librairie spécialisée **MNE**, en extrayons le
 
 Le projet a été développé par l'équipe suivante :
 
-- Julien Brachet ([GitHub](https://github.com/brachetj) / [LinkedIn](https://www.linkedin.com/in/julien-brachet-76b37325/)
+- Julien Brachet [GitHub](https://github.com/brachetj) / [LinkedIn](https://www.linkedin.com/in/julien-brachet-76b37325/)
 - François Crouchet [GitHub](https://github.com/fcrouchet) /[Linkedin](https://www.linkedin.com/in/fcrouchet/)
-- Valentin Djangoné [GitHub](https://github.com/valentindjangone) / [LinkedIn](https://www.linkedin.com/in/valentin-djangoné/))
+- Valentin Djangoné [GitHub](https://github.com/valentindjangone) / [LinkedIn](https://www.linkedin.com/in/valentin-djangoné/)
 - Nicolas Mavromatis [GitHub](https://github.com/9Nicox) / [LinkedIn](https://www.linkedin.com/in/nicolas-mavromatis/)
 
 
