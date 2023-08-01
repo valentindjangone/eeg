@@ -40,12 +40,15 @@ Le projet a été développé par l'équipe suivante :
 
 ## Pour lancer l'application Streamlit ...
 
-Pour lancer app :
+Pour lancer app, lancez votre terminal puis entrez une par une les lignes suivantes :
 
 ```shell
-cd streamlit_app
-conda create --name my-awesome-streamlit python=3.9
-conda activate my-awesome-streamlit
+cd
+cd desktop
+git clone https://github.com/DataScientest-Studio/eeg
+cd eeg
+conda create --name eeg_env python=3.9
+conda activate eeg_env
 pip install -r requirements.txt
 streamlit run app.py
 ```
