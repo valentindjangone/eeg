@@ -50,7 +50,16 @@ cd eeg
 conda create --name eeg_env python=3.9
 conda activate eeg_env
 pip install -r requirements.txt
+cd streamlit_app
 streamlit run app.py
 ```
+
+Ou copiez et collez cette unique ligne de code : 
+
+```shell
+cd && cd desktop && git clone https://github.com/DataScientest-Studio/eeg && cd eeg && conda create --name eeg_env python=3.9 && conda activate eeg_env && pip install -r requirements.txt && cd streamlit_app && streamlit run app.py
+```
+
+
 
 The app should then be available at [localhost:8501](http://localhost:8501).
