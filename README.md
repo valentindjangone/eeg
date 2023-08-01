@@ -7,7 +7,7 @@ Ce repository a pour objectif de présenter le projet initié dans le cadre de n
 
 Notre projet vise à classifier les ondes cérébrales associées à l'exécution motrice. L'objectif principal de cette classification est de créer une Interface Homme - Machine (IHM) permettant aux utilisateurs d'interagir avec des dispositifs ou des systèmes informatiques en utilisant leurs activités cérébrales en temps réel. En détectant et en interprétant les intentions de mouvement à partir des signaux EEG, nous souhaitons fournir une interface intuitive et efficace pour faciliter la communication et le contrôle avec les machines, ouvrant ainsi la voie à de nouvelles perspectives dans la technologie et l'accessibilité.
 
-### Défis
+## Défis
 
 Variabilité inter-sujets : Les signaux EEG peuvent varier considérablement d'un sujet à l'autre en raison des différences anatomiques, physiologiques et cognitives. Cette variabilité inter-sujets peut rendre difficile la généralisation du modèle de classification à l'ensemble de la population.
 
@@ -15,9 +15,9 @@ Recouvrement Spatial : Les mouvements que l'on souhaite détecter (bras droit, m
 
 
 
-**Résumé**
+## Résumé
 
-Nous avons classifié 1500 évènements issus de données électro encéphalographiques et spéctroscopiques fonctionnelles dans le proche infra rouge (EEG & fNIRS) issues de 15 sujets.
+Nous avons classifié ** 1500 ** évènements issus de données électro encéphalographiques et spéctroscopiques fonctionnelles dans le proche infra rouge (EEG & fNIRS) issues de 15 sujets.
 
 Les données sont issues d'executions motrices : bras droit, bras gauche, main droite, main gauche.
 
