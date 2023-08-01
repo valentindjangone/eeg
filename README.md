@@ -40,7 +40,13 @@ Le projet a été développé par l'équipe suivante :
 
 ## Pour lancer l'application Streamlit ...
 
-Pour lancer app, lancez votre terminal puis entrez une par une les lignes suivantes :
+Pour lancer app, lancez votre terminal puis copiez et collez cette unique ligne de code : 
+
+```shell
+cd && cd desktop && git clone https://github.com/DataScientest-Studio/eeg && cd eeg && conda create --name eeg_env python=3.9 && conda activate eeg_env && pip install -r requirements.txt && cd streamlit_app && streamlit run app.py
+```
+
+Ou entrez une par une les lignes suivantes :
 
 ```shell
 cd
@@ -52,12 +58,6 @@ conda activate eeg_env
 pip install -r requirements.txt
 cd streamlit_app
 streamlit run app.py
-```
-
-Ou copiez et collez cette unique ligne de code : 
-
-```shell
-cd && cd desktop && git clone https://github.com/DataScientest-Studio/eeg && cd eeg && conda create --name eeg_env python=3.9 && conda activate eeg_env && pip install -r requirements.txt && cd streamlit_app && streamlit run app.py
 ```
 
 
