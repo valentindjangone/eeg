@@ -1,6 +1,7 @@
 from collections import OrderedDict
 
 import streamlit as st
+import os
 
 # TODO : change TITLE, TEAM_MEMBERS and PROMOTION values in config.py.
 import config
@@ -14,7 +15,7 @@ st.set_page_config(
     page_icon="🧠",
 )
 
-with open("style.css", "r") as f:
+with open(os.path.join(current_path,"style.css"), "r") as f:
     style = f.read()
 
 st.markdown(f"<style>{style}</style>", unsafe_allow_html=True)
