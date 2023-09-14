@@ -5,7 +5,7 @@ import os
 
 current_path = os.path.dirname(os.path.abspath(__file__))
 
-fif_path = os.path.join(current_path, "../assets/tab3/S1_eeg.fif")
+fif_path = os.path.join(current_path, "../assets/tab_3/S1_eeg.fif")
 
 
 sidebar_name = "Preprocessing"
@@ -29,7 +29,7 @@ sur le schéma), et inversement pour le filtre basse-bas ; Tout simplement en
 combinant les deux, on peut obtenir un filtre passe-bande ou bien un filtre
 coupe-bande."""
 
-img_filtres = os.path.join(current_path, "../assets/tab3/ExplicationFiltres.png")
+img_filtres = os.path.join(current_path, "../assets/tab_3/ExplicationFiltres.png")
 text_filtreseeg= """Pour les données EEG, un filtre passe-haut de 0.01 HZ et un filtre
 passe-bas de 24.49 Hz ont été appliqués. Ce sont des filtres utilisés de
 manière conventionnelle dans l’analyse de signal EEG et qui permettent de
@@ -43,7 +43,7 @@ plus constant possible dans la bande passante et tend vers 0 dB dans la bande
 de coupure. La fréquence pour le filtre passe-haut était de 0,01Hz et 0,2Hz pour
 le filtre passe-bas.
 """
-img_butterworth = os.path.join(current_path, "../assets/tab3/Butterworth_orders.png")
+img_butterworth = os.path.join(current_path, "../assets/tab_3/Butterworth_orders.png")
 
 rawo = mne.io.read_raw_fif(fif_path,preload=True)
 rawo10 = rawo.copy()
@@ -79,9 +79,9 @@ def display_fig():
 def display_ica():
     rawica=rawo.copy()
     if st.session_state["radio_ica"] == "Pas de filtre et d'ICA":
-        img_ica= os.path.join(current_path,"../assets/tab3/EEGAvantFiltrage.png")
+        img_ica= os.path.join(current_path,"../assets/tab_3/EEGAvantFiltrage.png")
     else:
-        img_ica= os.path.join(current_path,"../assets/tab3/EEGApresFiltrage.png")
+        img_ica= os.path.join(current_path,"../assets/tab_3/EEGApresFiltrage.png")
     return img_ica
 
 header_ICA = "Independant Components Analysis sur les signaux EEG"
@@ -100,13 +100,13 @@ pour les transformer en signaux de concentration d’hémoglobine oxygénée (Hb
 et d’hémoglobine désoxygénée (HbR). Cette transformation a été réalisée
 en appliquant la loi de Beer-Lambert.
 """
-img_absorption= os.path.join(current_path,"../assets/tab3/AbsorptionHbOHbR.png")
-hbo_righthand_FC1_1= os.path.join(current_path,"../assets/tab3/NIRS_hbo_righthand_FC1_1.png")
-hbo_righthand_FC1_2= os.path.join(current_path,"../assets/tab3/NIRS_hbo_righthand_FC1_2.png")
-hbo_righthand_FC1_3= os.path.join(current_path,"../assets/tab3/NIRS_hbo_righthand_FC1_3.png")
-hbr_righthand_FC1_1= os.path.join(current_path,"../assets/tab3/NIRS_hbr_righthand_FC1_1.png")
-hbr_righthand_FC1_2= os.path.join(current_path,"../assets/tab3/NIRS_hbr_righthand_FC1_2.png")
-hbr_righthand_FC1_3= os.path.join(current_path,"../assets/tab3/NIRS_hbr_righthand_FC1_3.png")
+img_absorption= os.path.join(current_path,"../assets/tab_3/AbsorptionHbOHbR.png")
+hbo_righthand_FC1_1= os.path.join(current_path,"../assets/tab_3/NIRS_hbo_righthand_FC1_1.png")
+hbo_righthand_FC1_2= os.path.join(current_path,"../assets/tab_3/NIRS_hbo_righthand_FC1_2.png")
+hbo_righthand_FC1_3= os.path.join(current_path,"../assets/tab_3/NIRS_hbo_righthand_FC1_3.png")
+hbr_righthand_FC1_1= os.path.join(current_path,"../assets/tab_3/NIRS_hbr_righthand_FC1_1.png")
+hbr_righthand_FC1_2= os.path.join(current_path,"../assets/tab_3/NIRS_hbr_righthand_FC1_2.png")
+hbr_righthand_FC1_3= os.path.join(current_path,"../assets/tab_3/NIRS_hbr_righthand_FC1_3.png")
 
 
 def run():
