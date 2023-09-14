@@ -3,8 +3,9 @@ import pandas as pd
 import numpy as np
 import os
 
-
-
+current_path = os.path.dirname(os.path.abspath(__file__))
+cortex = os.path.join(current_path, '../assets/tab4/Cortex_sensorimoteur1.jpg')
+video = os.path.join(current_path, "../assets/tab4/VotingClassifierAnimation.mp4")
 title = "Modélisation"
 sidebar_name = "Modèlisation"
 
@@ -38,7 +39,7 @@ def run():
     )
     col1, col2, col3 = st.columns(3)
     with col2:
-        st.image('../assets/tab4/Cortex_sensorimoteur1.jpg')
+        st.image(cortex)
     st.subheader(sub_header_3)
     st.markdown(
         """
@@ -54,7 +55,7 @@ def run():
         """
     )
 
-    st.video("../assets/tab4/VotingClassifierAnimation.mp4")
+    st.video(video)
     st.markdown("_Vidéo : Animation du système de classification de vote_") 
 
     st.subheader(sub_header_4)
