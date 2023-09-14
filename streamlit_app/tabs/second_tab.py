@@ -11,6 +11,8 @@ import streamlit as st
 title = "Second tab"
 sidebar_name = "Analyse et visualisation des données"
 current_path = os.path.dirname(os.path.abspath(__file__))
+image = os.path.join(current_path, "../assets/tab2/eeg_raw.png")
+imageorga = os.path.join(current_path, "../assets/tab2/OrgaData.png")
 
 def run():
     # Affichage du titre
@@ -23,7 +25,6 @@ def run():
     st.write("- Les données de chacun des participants étaient stockées dans un fichier matlab.\n"
             "- Leur extraction et l’utilisation de la librairie MNE nous a permis de les séparer  \n en « epoch ».\n"
             """- Chaque epoch correspond à la fenêtre temporelle durant laquelle le participant  \n réalisait une condition expérimentale (repos ou l’un des 4 mouvements ou \n l’indication du début d’une séquence expérimentale).""")
-    imageorga = os.path.join(current_path, "../assets/tab2/OrgaData.png")
     st.image(imageorga)
     # Affichage du titre
     st.header("Premières visualisations")
@@ -31,7 +32,6 @@ def run():
     st.write("A l’aide de la librairie MNE et de la commande plot_raw, il est possible d’observer \nl’amplitude du signal pour l’ensemble des électrodes d’enregistrement : ")
 
     # Affichage de l'image
-    image = os.path.join(current_path, "../assets/tab2/eeg_raw.png")
     st.image(image)
 
 
