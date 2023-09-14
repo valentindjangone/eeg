@@ -36,7 +36,7 @@ def run():
     )
     col1, col2, col3 = st.columns(3)
     with col2:
-        st.image('../images/Cortex_sensorimoteur1.jpg')
+        st.image('assets/tab4/Cortex_sensorimoteur1.jpg')
     st.subheader(sub_header_3)
     st.markdown(
         """
@@ -52,7 +52,7 @@ def run():
         """
     )
 
-    st.video("VotingClassifierAnimation.mp4")
+    st.video("assets/tab4/VotingClassifierAnimation.mp4")
     st.markdown("_Vidéo : Animation du système de classification de vote_") 
 
     st.subheader(sub_header_4)
