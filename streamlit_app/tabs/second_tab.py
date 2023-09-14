@@ -13,6 +13,7 @@ sidebar_name = "Analyse et visualisation des données"
 current_path = os.path.dirname(os.path.abspath(__file__))
 imageorgadata =os.path.join(current_path, "/mount/src/eeg/streamlit_app/assets/tab_2/orgadata.png")
 image = os.path.join(current_path, "../assets/tab_2/eeg_raw.png")
+gif = os.path.join(current_path, "../assets/tab_2/Gif_evoked_RightHand.mp4")
 
 
 def run():
@@ -71,7 +72,6 @@ def run():
     st.header("Premières visualisations")
 
     st.write("Enfin, il est possible d’accéder à la dynamique des changements d’activité neuronale \nà l’aide de la fonction plot_topomap de MNE : ")
-    gif = os.path.join(current_path, "Gif_evoked_RightHand.mp4")
     st.video(gif)
 
 
