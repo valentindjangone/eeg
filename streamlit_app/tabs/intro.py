@@ -4,7 +4,7 @@ import os
 
 # Ouvrir l'image PNG
 print(os.getcwd)
-image = Image.open("../assets/intro/ImageEEG.png")
+image = Image.open("./assets/intro/ImageEEG.png")
 
 # Définir la nouvelle largeur souhaitée
 new_width = 700
