@@ -7,7 +7,7 @@ sidebar_name = "Page d'accueil du projet"
 
 def run():
     # Créez trois colonnes (gauche, centre, droite)
-    left_column, center_column, right_column = st.beta_columns(3)
+    left_column, center_column, right_column = st.columns(3)
 
     # Afficher le gif dans la colonne du milieu
     center_column.image("https://media.giphy.com/media/lkdIhnHHnFma6xvICt/giphy-downsized-large.gif", width=400)

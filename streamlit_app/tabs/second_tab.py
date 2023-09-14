@@ -31,7 +31,7 @@ def run():
     st.write("A l’aide de la librairie MNE et de la commande plot_raw, il est possible d’observer \nl’amplitude du signal pour l’ensemble des électrodes d’enregistrement : ")
 
     # Affichage de l'image
-    image = os.path.join(current_path, "../../assets/tab2/eeg_raw.png")
+    image = os.path.join(current_path, "../assets/tab2/eeg_raw.png")
     st.image(image)
 
 

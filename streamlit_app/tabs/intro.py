@@ -46,7 +46,7 @@ def run():
     st.header("Interface Cerveau Machine / Intelligence  Artificielle : la combinaison gagnante")
     
     img = Image.open("image_resized.png")
-    left_column, center_column, right_column = st.beta_columns(3)
+    left_column, center_column, right_column = st.columns(3)
 
     center_column.image(img, width = 400, caption = "")
     tab1, tab2 = st.tabs(["Introduction", "Objectifs"])
