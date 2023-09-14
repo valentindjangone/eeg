@@ -3,10 +3,12 @@ from collections import OrderedDict
 import streamlit as st
 import os
 
-# TODO : change TITLE, TEAM_MEMBERS and PROMOTION values in config.py.
+current_path = os.path.dirname(os.path.abspath(__file__))
+
+# TODO : 
 import config
 
-# TODO : you can (and should) rename and add tabs in the ./tabs folder, and import them here.
+# TODO : 
 from tabs import home, intro, second_tab, third_tab, fourth_tab, fifth_tab
 
 
