@@ -1,9 +1,11 @@
 import streamlit as st
 from PIL import Image
+import os
 
+current_path = os.path.dirname(os.path.abspath(__file__))
 # Ouvrir l'image PNG
-image = Image.open("assets/intro/ImageEEG.png")
-
+image_path = os.path.join(current_path, "assets/intro/ImageEEG.png")
+image = Image.open(image_path)
 # Définir la nouvelle largeur souhaitée
 new_width = 700
 
@@ -42,6 +44,7 @@ def run():
     _left, mid, _right = st.columns(3)
   
     st.header("Interface Cerveau Machine / Intelligence  Artificielle : la combinaison gagnante")
+    
     img = Image.open("image_resized.png")
     left_column, center_column, right_column = st.columns(3)
 
