@@ -11,8 +11,8 @@ import streamlit as st
 title = "Second tab"
 sidebar_name = "Analyse et visualisation des données"
 current_path = os.path.dirname(os.path.abspath(__file__))
-imageorgadata ="/mount/src/eeg/streamlit_app/assets/tab2/orgadata.png"
-image = os.path.join(current_path, "../assets/tab2/eeg_raw.png")
+imageorgadata =os.path.join(current_path, "/mount/src/eeg/streamlit_app/assets/tab_2/orgadata.png")
+image = os.path.join(current_path, "../assets/tab_2/eeg_raw.png")
 
 
 def run():
@@ -48,18 +48,18 @@ def run():
 
     if selected_option == 'EEG':
         # Affichage des 4 images EEG
-        image1 = os.path.join(current_path,"../assets/tab2/EEG1.png")
-        image2 = os.path.join(current_path,"../assets/tab2/EEG2.png")
-        image3 = os.path.join(current_path,"../assets/tab2/EEG3.png")
-        image4 = os.path.join(current_path,"../assets/tab2/EEG4.png")
+        image1 = os.path.join(current_path,"../assets/tab_2/EEG1.png")
+        image2 = os.path.join(current_path,"../assets/tab_2/EEG2.png")
+        image3 = os.path.join(current_path,"../assets/tab_2/EEG3.png")
+        image4 = os.path.join(current_path,"../assets/tab_2/EEG4.png")
         st.image([image1, image2], caption=['Main Gauche', 'Main Droite'])
         st.image([image3, image4], caption=['Bras Gauche', 'Bras Droit'])
     else:
         # Affichage des 4 images NIRS
-        image1 = os.path.join(current_path,"../assets/tab2/NIRS1.png")
-        image2 = os.path.join(current_path,"../assets/tab2/NIRS2.png")
-        image3 = os.path.join(current_path,"../assets/tab2/NIRS3.png")
-        image4 = os.path.join(current_path,"../assets/tab2/NIRS4.png")
+        image1 = os.path.join(current_path,"../assets/tab_2/NIRS1.png")
+        image2 = os.path.join(current_path,"../assets/tab_2/NIRS2.png")
+        image3 = os.path.join(current_path,"../assets/tab_2/NIRS3.png")
+        image4 = os.path.join(current_path,"../assets/tab_2/NIRS4.png")
         st.image([image1, image2], caption=['Main Gauche', 'Main Droite'])
         st.image([image3, image4], caption=['Bras Gauche', 'Bras Droit'])
 
