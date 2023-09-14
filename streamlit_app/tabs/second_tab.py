@@ -22,7 +22,7 @@ def run():
     st.write("- Les données de chacun des participants étaient stockées dans un fichier matlab.\n"
             "- Leur extraction et l’utilisation de la librairie MNE nous a permis de les séparer  \n en « epoch ».\n"
             """- Chaque epoch correspond à la fenêtre temporelle durant laquelle le participant  \n réalisait une condition expérimentale (repos ou l’un des 4 mouvements ou \n l’indication du début d’une séquence expérimentale).""")
-    imageorga = "assets/tab2/OrgaData.png"
+    imageorga = "../assets/tab2/OrgaData.png"
     st.image(imageorga)
     # Affichage du titre
     st.header("Premières visualisations")
@@ -30,7 +30,7 @@ def run():
     st.write("A l’aide de la librairie MNE et de la commande plot_raw, il est possible d’observer \nl’amplitude du signal pour l’ensemble des électrodes d’enregistrement : ")
 
     # Affichage de l'image
-    image = "assets/tab2/eeg_raw.png"
+    image = os.path.join(current_path, "../../assets/tab2/eeg_raw.png")
     st.image(image)
 
 
@@ -46,18 +46,18 @@ def run():
 
     if selected_option == 'EEG':
         # Affichage des 4 images EEG
-        image1 = "assets/tab2/EEG1.png"
-        image2 = "assets/tab2/EEG2.png"
-        image3 = "assets/tab2/EEG3.png"
-        image4 = "assets/tab2/EEG4.png"
+        image1 = os.path.join(current_path,"../assets/tab2/EEG1.png")
+        image2 = os.path.join(current_path,"../assets/tab2/EEG2.png")
+        image3 = os.path.join(current_path,"../assets/tab2/EEG3.png")
+        image4 = os.path.join(current_path,"../assets/tab2/EEG4.png")
         st.image([image1, image2], caption=['Main Gauche', 'Main Droite'])
         st.image([image3, image4], caption=['Bras Gauche', 'Bras Droit'])
     else:
         # Affichage des 4 images NIRS
-        image1 = "assets/tab2/NIRS1.png"
-        image2 = "assets/tab2/NIRS2.png"
-        image3 = "assets/tab2/NIRS3.png"
-        image4 = "assets/tab2/NIRS4.png"
+        image1 = os.path.join(current_path,"../assets/tab2/NIRS1.png")
+        image2 = os.path.join(current_path,"../assets/tab2/NIRS2.png")
+        image3 = os.path.join(current_path,"../assets/tab2/NIRS3.png")
+        image4 = os.path.join(current_path,"../assets/tab2/NIRS4.png")
         st.image([image1, image2], caption=['Main Gauche', 'Main Droite'])
         st.image([image3, image4], caption=['Bras Gauche', 'Bras Droit'])
 
@@ -79,7 +79,7 @@ def run():
     st.write("Il est également possible d’observer la densité  spectrale de puissance (ou PSD en \nanglais). Elle nous renseigne sur la répartition fréquentielle de la puissance \nd’un signal :")
 
 
-    image_psd =  "PSD.png"
+    image_psd =  os.path.join(current_path,"../assets/PSD.png")
     st.image(image_psd)
 
     st.write("Rappel, rythmes physiologiques : delta (<4Hz), thêta (4-8Hz), alpha (8-12Hz,\nbêta (12 à 30 Hz) et gamma (>30Hz)")
