@@ -24,7 +24,7 @@ def run():
             "- Leur extraction et l’utilisation de la librairie MNE nous a permis de les séparer  \n en « epoch ».\n"
             """- Chaque epoch correspond à la fenêtre temporelle durant laquelle le participant  \n réalisait une condition expérimentale (repos ou l’un des 4 mouvements ou \n l’indication du début d’une séquence expérimentale).""")
     imageorga = os.path.join(current_path, "../assets/tab2/OrgaData.png")
-    st.image(imageorga)
+    #st.image(imageorga)
     # Affichage du titre
     st.header("Premières visualisations")
 
