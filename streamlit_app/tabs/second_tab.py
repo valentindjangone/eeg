@@ -11,7 +11,7 @@ import streamlit as st
 title = "Second tab"
 sidebar_name = "Analyse et visualisation des données"
 current_path = os.path.dirname(os.path.abspath(__file__))
-imageorgadata ="/mount/src/eeg/streamlit_app//assets/tab2/orgadata.png"
+imageorgadata ="/mount/src/eeg/streamlit_app/assets/tab2/orgadata.png"
 image = os.path.join(current_path, "../assets/tab2/eeg_raw.png")
 
 
