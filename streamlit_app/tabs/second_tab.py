@@ -22,7 +22,7 @@ image5 = os.path.join(current_path,"../assets/tab_2/NIRS1.png")
 image6 = os.path.join(current_path,"../assets/tab_2/NIRS2.png")
 image7 = os.path.join(current_path,"../assets/tab_2/NIRS3.png")
 image8 = os.path.join(current_path,"../assets/tab_2/NIRS4.png")
-image_psd =  os.path.join(current_path,"../assets/PSD.png")
+image_psd =  os.path.join(current_path,"../assets/tab_2/PSD.png")
 
 def run():
     # Affichage du titre
