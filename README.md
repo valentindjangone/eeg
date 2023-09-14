@@ -41,6 +41,3 @@ Le projet a été développé par l'équipe suivante :
 ## Pour lancer l'application Streamlit ...
 
 Pour lancer app, il vous suffit de cliquer sur le lien suivant : https://eegproject.streamlit.app
-
-
-The app should then be available at [localhost:8501](http://localhost:8501).
