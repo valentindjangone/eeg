@@ -37,10 +37,6 @@ sidebar_name = "Introduction"
 
 def run():
 
-    # TODO: choose between one of these GIFs
-    #st.image("https://dst-studio-template.s3.eu-west-3.amazonaws.com/1.gif")
-    #st.image("https://dst-studio-template.s3.eu-west-3.amazonaws.com/2.gif")
-    #st.image("https://dst-studio-template.s3.eu-west-3.amazonaws.com/3.gif")
     _left, mid, _right = st.columns(3)
   
     st.header("Interface Cerveau Machine / Intelligence  Artificielle : la combinaison gagnante")
