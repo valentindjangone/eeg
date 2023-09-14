@@ -1,4 +1,6 @@
 import streamlit as st
+import os
+
 
 title = "Projet DataScientest : Classification de signaux EEG et fNIRS."
 sidebar_name = "Page d'accueil du projet"

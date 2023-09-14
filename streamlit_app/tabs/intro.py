@@ -4,7 +4,7 @@ import os
 
 current_path = os.path.dirname(os.path.abspath(__file__))
 # Ouvrir l'image PNG
-image_path = os.path.join(current_path, "assets/intro/ImageEEG.png")
+image_path = os.path.join(current_path, "../assets/intro/ImageEEG.png")
 image = Image.open(image_path)
 # Définir la nouvelle largeur souhaitée
 new_width = 700
