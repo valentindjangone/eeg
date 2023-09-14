@@ -28,7 +28,8 @@ et coupe les basses fréquences, par rapport à une fréquence de référence (f
 sur le schéma), et inversement pour le filtre basse-bas ; Tout simplement en
 combinant les deux, on peut obtenir un filtre passe-bande ou bien un filtre
 coupe-bande."""
-img_filtres = "../assets/tab3/ExplicationFiltres.png"
+
+img_filtres = os.path.join(current_path, "../assets/tab3/ExplicationFiltres.png")
 text_filtreseeg= """Pour les données EEG, un filtre passe-haut de 0.01 HZ et un filtre
 passe-bas de 24.49 Hz ont été appliqués. Ce sont des filtres utilisés de
 manière conventionnelle dans l’analyse de signal EEG et qui permettent de
