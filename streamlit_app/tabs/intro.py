@@ -2,7 +2,7 @@ import streamlit as st
 from PIL import Image
 
 # Ouvrir l'image PNG
-image = Image.open("ImageEEG.png")
+image = Image.open("streamlit_app/ImageEEG.png")
 
 # Définir la nouvelle largeur souhaitée
 new_width = 700
