@@ -1,6 +1,15 @@
 import streamlit as st
 import os
+from streamlit.web import cli as stcli
+from streamlit import runtime
+import sys
 
+if __name__ == '__main__':
+    if runtime.exists():
+        main()
+    else:
+        sys.argv = ["streamlit", "run", sys.argv[0]]
+        sys.exit(stcli.main())
 
 title = "Projet DataScientest : Classification de signaux EEG et fNIRS."
 sidebar_name = "Page d'accueil du projet"
