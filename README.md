@@ -1,43 +1,32 @@
-# Projet EEG
-
-
 ## Introduction
 
-Ce repository a pour objectif de présenter le projet initié dans le cadre de notre formation de [Data Scientist](https://datascientest.com/en/data-scientist-course) à [DataScientest](https://datascientest.com/)
+This repository aims to present the project initiated as part of our Data Scientist training at DataScientest. Our project aims to classify brain waves associated with motor execution. The primary goal of this classification is to create a Human-Machine Interface (HMI) allowing users to interact with devices or computer systems using their real-time brain activities. By detecting and interpreting movement intentions from Electroencephalographic (EEG) and Functional Near-Infrared Spectroscopy (FNIRS) signals, we aim to contribute to the development of an intuitive and effective interface for facilitating communication and control with machines, thus opening new perspectives in technology and accessibility.
 
-Notre projet vise à **classifier** les ondes cérébrales associées à l'**exécution motrice**. L'objectif principal de cette classification est de créer une **Interface Homme - Machine (IHM)** permettant aux utilisateurs d'interagir avec des dispositifs ou des systèmes informatiques en utilisant leurs activités cérébrales en temps réel. En détectant et en interprétant les **intentions de mouvement** à partir des signaux électroencéphalographiques **(EEG)** et Functional Near Infrared Spectroscopy **(FNIRS)**, nous souhaitons contribuer au développement d'une interface intuitive et efficace pour faciliter la communication et le contrôle avec les machines, ouvrant ainsi la voie à de nouvelles perspectives dans la technologie et l' **accessibilité**.
+## Challenges
 
-## Défis
+Such a classification presents two main difficulties:
 
-Une telle classification présente deux difficultés principales :
+**Inter-subject Variability:** EEG signals can vary significantly from one subject to another due to anatomical, physiological, and cognitive differences. *This inter-subject variability can make it difficult to generalize the classification model to the entire population.
 
-**Variabilité inter-sujets :** Les signaux EEG peuvent varier considérablement d'un sujet à l'autre en raison des différences anatomiques, physiologiques et cognitives. Cette variabilité inter-sujets peut rendre difficile la généralisation du modèle de classification à l'ensemble de la population.
+**Spatial Overlap:** The movements we want to detect (right arm, right hand, left arm, left hand) are spatially close in the brain. This means that the corresponding EEG signals can overlap, making it difficult to distinguish them accurately.
 
-**Recouvrement Spatial :** Les mouvements que l'on souhaite détecter (bras droit, main droite, bras gauche, main gauche) sont spatialement proches dans le cerveau. Cela signifie que les signaux EEG correspondants peuvent se chevaucher, rendant difficile leur distinction précise.
+## Summary
 
+We have classified 1500 events from electroencephalographic and functional near-infrared spectroscopy data (EEG & fNIRS) from 15 subjects.
 
+The data comes from motor executions: right arm, left arm, right hand, left hand.
 
-## Résumé
+We process the signal with the specialized library MNE, extract features with the ROCKET random feature generation algorithm, and classify the events according to the 4 above classes with a linear classifier.
 
-Nous avons classifié **1500** évènements issus de données électro encéphalographiques et spéctroscopiques fonctionnelles dans le proche infra rouge **(EEG & fNIRS)** issues de **15 sujets**.
+## Team 
 
-Les données sont issues d'**exécutions motrices** : bras droit, bras gauche, main droite, main gauche.
+The project was developed by the following team:
 
-Nous traitons le signal avec la librairie spécialisée **MNE**, en extrayons les caractéristiques avec l'algorithme de génération aléatoire de caractéristiques **ROCKET** et classifions les évènements selon les 4 classes ci-dessus avec un **classifieur linéaire**.
-
-
-
-
-## Équipe
-
-Le projet a été développé par l'équipe suivante :
 
 - Julien Brachet [GitHub](https://github.com/brachetj) / [LinkedIn](https://www.linkedin.com/in/julien-brachet-76b37325/)
 - François Crouchet [GitHub](https://github.com/fcrouchet) /[Linkedin](https://www.linkedin.com/in/fcrouchet/)
 - Valentin Djangoné [GitHub](https://github.com/valentindjangone) / [LinkedIn](https://www.linkedin.com/in/valentin-djangoné/)
 - Nicolas Mavromatis [GitHub](https://github.com/9Nicox) / [LinkedIn](https://www.linkedin.com/in/nicolas-mavromatis/)
+## To Launch the Streamlit Application...
 
-
-## Pour lancer l'application Streamlit ...
-
-Pour lancer app, il vous suffit de cliquer sur le lien suivant : https://eegproject.streamlit.app
+To launch the app, simply click on the following link: https://eegproject.streamlit.app
