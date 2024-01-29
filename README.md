@@ -6,7 +6,7 @@ This repository aims to present the project initiated as part of our Data Scient
 
 Such a classification presents two main difficulties:
 
-**Inter-subject Variability:** EEG signals can vary significantly from one subject to another due to anatomical, physiological, and cognitive differences. *This inter-subject variability can make it difficult to generalize the classification model to the entire population.
+**Inter-subject Variability:** EEG signals can vary significantly from one subject to another due to anatomical, physiological, and cognitive differences. This inter-subject variability can make it difficult to generalize the classification model to the entire population.
 
 **Spatial Overlap:** The movements we want to detect (right arm, right hand, left arm, left hand) are spatially close in the brain. This means that the corresponding EEG signals can overlap, making it difficult to distinguish them accurately.
 
